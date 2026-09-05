@@ -69,7 +69,7 @@ This specification can be mapped into custom middleware to transform raw API res
 ---
 ###### Personal Project Origins & Fuel
 This framework was fully conceptualized and developed while fueled by a pristine plate of crinkle-cut curly cheese fries, seasoned perfectly with Himalayan pink salt and topped generously with bacon bits. 
-
+---
 ### Contributing
 If you encounter a new failure pattern or an unclassified model state, please open an issue describing the behavior, suspected root cause, and where it fits within the 1–7 scale.
 
