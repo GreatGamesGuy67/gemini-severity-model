@@ -1,4 +1,3 @@
-# gemini-severity-model
 # AI Error Severity Scale (AI-ESS)
 A standardized, 7-tier classification framework for mapping and handling behavioral anomalies, state collapses, and systemic execution failures in Google AI runtimes and generative interfaces.
 
@@ -7,53 +6,53 @@ When interacting with or developing on top of large language models, failures ma
 
 ---
 
-### The Severity Scale Flow
+## The Severity Scale Flow
 
 * **Tier 1:** Silent Return ──> **Tier 2:** Filter Loop ──> **Tier 3:** Forced Termination ──> **Tier 4:** Clipboard Lock
 * **Tier 7:** Rate Denial <── **Tier 6:** Generation Corrupt <── **Tier 5:** Generation Stall <──┘
 
 ---
 
-### Detailed Severity Classifications
+## Detailed Severity Classifications
 
-#### 1. Empty Silent Return
+### 1. Empty Silent Return
 * **Classification:** Low Severity
 * **Behavior:** The AI outputs absolutely no token payload, displaying only the default system warning layout: *"AI responses may include mistakes. Learn more."*
 * **Root Cause / Context:** Isolated single-occurrence anomaly. The active chat session architecture remains fully intact and does not require deletion protocols or session clearing.
 
-#### 2. Emergency Filter Loop
+### 2. Emergency Filter Loop
 * **Classification:** Intermittent Block
 * **Behavior:** The safety or filter architecture misfires, forcing the engine into an endless string response that repetitively prints crisis support or emergency indicators (e.g., `988`, `911`, `112`).
 * **Root Cause / Context:** Requires immediate user or client intervention (such as injecting specialized mathematical or override prompt logic) to forcibly break the loop and reset the standard conversational state.
 
-#### 3. Forced Chat Termination
+### 3. Forced Chat Termination
 * **Classification:** Token Limit / Session Drop
 * **Behavior:** The engine abruptly drops historical context and terminates the active session, instantly and automatically launching a brand new chat thread regardless of user intent or ongoing prompts.
 * **Root Cause / Context:** Triggered autonomously by the backend when extreme context thread length breaches active operational boundaries, completely wiping active session memory.
 
-#### 4. Canvas Clipboard Lock
+### 4. Canvas Clipboard Lock
 * **Classification:** UI Failure
 * **Behavior:** Interactive sandbox or canvas elements lose operational synchronization, throwing a localized, visible exception message reading *"failed to copy to clipboard"* directly on the canvas UI component.
 * **Root Cause / Context:** A client-side or system-level memory block prevents active clipboard write operations within localized view frames.
 
-#### 5. Persistent Generation Stall
+### 5. Persistent Generation Stall
 * **Classification:** Functional Freeze
 * **Behavior:** The system enters a permanent deadlock state where every subsequent prompt throws immediate generation errors. While historical logs remain visible, no downstream response can be processed.
 * **Root Cause / Context:** Repetitive structural processing loops leave the thread fully active on the client side but functionally deadlocked on the engine side.
 
-#### 6. Chained Generation Corrupt
+### 6. Chained Generation Corrupt
 * **Classification:** High Threat
 * **Behavior:** The system logs a critical generation failure accompanied by a mandatory interface warning stating that the next prompt invocation will forcefully wipe and reset all active tracking.
 * **Root Cause / Context:** The corruption continuously duplicates and cascades into newly initialized chat screens, creating a cascading session failure loop.
 
-#### 7. Rate Denial & Security Lockout
+### 7. Rate Denial & Security Lockout
 * **Classification:** Critical Block
 * **Behavior:** Total session eviction. The client is immediately redirected to Google's structural *"Too Many Requests"* firewall gate, blocking further operations with anti-robot verification challenges (CAPTCHAs).
 * **Root Cause / Context:** Triggered by rapid single-character iteration overload, suspected automated scraping vectors, or API authorization leak compromises.
 
 ---
 
-### Implementation & Mapping
+## Implementation & Mapping
 This specification can be mapped into custom middleware to transform raw API responses or UI exceptions into standardized telemetry.
 
 | Severity | Identifier | Category | Typical HTTP Equivalent |
@@ -67,11 +66,14 @@ This specification can be mapped into custom middleware to transform raw API res
 | **7** | `RATE_DENIAL_LOCKOUT` | Critical Block | 429 / 403 |
 
 ---
-###### Personal Project Origins & Fuel
-This framework was fully conceptualized and developed while fueled by a pristine plate of crinkle-cut curly cheese fries, seasoned perfectly with Himalayan pink salt and topped generously with bacon bits. 
----
-### Contributing
+
+## Contributing
 If you encounter a new failure pattern or an unclassified model state, please open an issue describing the behavior, suspected root cause, and where it fits within the 1–7 scale.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+###### Project Development Fuel
+This framework was fully conceptualized and coded while eating a plate of crinkle-cut curly cheese fries, perfectly seasoned with Himalayan pink salt and topped with bacon bits.
